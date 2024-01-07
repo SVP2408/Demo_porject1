@@ -9,7 +9,6 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
 from pathlib import Path
 from django.contrib.messages import constants as messages
 
@@ -26,7 +25,7 @@ SECRET_KEY = 'django-insecure-+l^ds=+2ker999bon@@kf04ogv*_jt^&#k=@15z_gmks=tzm2v
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*', '127.0.0.1']
+ALLOWED_HOSTS = ['*', '127.0.0.1','.vercel.app','.now.sh']
 
 
 # Application definition
@@ -116,7 +115,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
-
+import os
 STATIC_URL = 'static/'
 
 # Default primary key field type
@@ -127,7 +126,7 @@ STATICFILES_DIRS = [
    BASE_DIR / "static"
     
 ]
-
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles_build','static')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
